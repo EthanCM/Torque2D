@@ -36,7 +36,11 @@ function PointForceControllerToy::create( %this )
     PointForceControllerToy.showPlanetoid = true;
     PointForceControllerToy.showExplosions = true;    
     PointForceControllerToy.nonLinearController = true;
+<<<<<<< HEAD
     PointForceControllerToy.controllerForce = 35;
+=======
+    PointForceControllerToy.controllerForce = 55;
+>>>>>>> - Updated the PointForceControllerToy to better show its features.
     PointForceControllerToy.controllerRadius = 36;
     PointForceControllerToy.controllerLinearDrag = 0.1;
     PointForceControllerToy.controllerAngularDrag = 0;
@@ -51,13 +55,21 @@ function PointForceControllerToy::create( %this )
     addFlagOption("Show Planetoid", "setShowPlanetoid", PointForceControllerToy.showPlanetoid, true, "Whether to show the planetoid or not or not." );
     addFlagOption("Show Explosions", "setShowExplosions", PointForceControllerToy.showExplosions, false, "Whether to show the explosions or not or not." );
     addFlagOption("Controller Non-Linear", "setNonLinearController", PointForceControllerToy.nonLinearController, true, " Whether to apply the controller force non-linearly (using the inverse square law) or linearly" );
+<<<<<<< HEAD
     addNumericOption("Controller Force", -1000, 1000, 10, "setControllerForce", PointForceControllerToy.controllerForce, true, "Sets the controller force.");
+=======
+    addNumericOption("Controller Force", 1, 1000, 10, "setControllerForce", PointForceControllerToy.controllerForce, true, "Sets the controller force.");
+>>>>>>> - Updated the PointForceControllerToy to better show its features.
     addNumericOption("Controller Radius", 1, 30, 1, "setControllerRadius", PointForceControllerToy.controllerRadius, true, "Sets the controller radius.");
     addNumericOption("Controller Linear Drag", 0, 1, 0.1, "setControllerLinearDrag", PointForceControllerToy.controllerLinearDrag, true, "Sets the controller linear drag.");
     addNumericOption("Controller Angular Drag", 0, 1, 0.1, "setControllerAngularDrag", PointForceControllerToy.controllerAngularDrag, true, "Sets the controller angular drag.");
     addNumericOption("Planetoid Size", 1, 30, 1, "setPlanetoidSize", PointForceControllerToy.planetoidSize, true, "Sets the planetoid size.");
     addNumericOption("Asteroid Size", 1, 10, 1, "setAsteroidSize", PointForceControllerToy.asteroidSize, true, "Sets the asteroid size.");
+<<<<<<< HEAD
     addNumericOption("Asteroid Density", 0.1, 10, 0.1, "setAsteroidDensity", PointForceControllerToy.asteroidDensity, true, "Sets the asteroid density.");
+=======
+    addNumericOption("Asteroid Density", 1, 10, 1, "setAsteroidDensity", PointForceControllerToy.asteroidDensity, true, "Sets the asteroid density.");
+>>>>>>> - Updated the PointForceControllerToy to better show its features.
     addNumericOption("Asteroid Lifetime", 1, 10, 1, "setAsteroidLifetime", PointForceControllerToy.asteroidLifetime, true, "Sets the asteroid lifetime.");
     addNumericOption("Asteroid Speed", 1, 100, 1, "setAsteroidSpeed", PointForceControllerToy.asteroidSpeed, true, "Sets the asteroid speed.");
       
@@ -90,8 +102,11 @@ function PointForceControllerToy::reset( %this )
     // Start a timer throwing asteroids.
     if ( PointForceControllerToy.autoSpawnAsteroids )
         %this.startTimer( "createAsteroid", 1000 );
+<<<<<<< HEAD
     else
         %this.stopTimer();        
+=======
+>>>>>>> - Updated the PointForceControllerToy to better show its features.
 }
 
 //-----------------------------------------------------------------------------
@@ -179,8 +194,12 @@ function Planetoid::onCollision( %this, %object, %collisionDetails )
     }
     
     // Delete the asteroid.
+<<<<<<< HEAD
     %object.Trail.LinearVelocity = 0;
     %object.Trail.AngularVelocity = 0;
+=======
+    %object.Trail.stop(false);
+>>>>>>> - Updated the PointForceControllerToy to better show its features.
     %object.Trail.safeDelete();
     %object.safeDelete();  
 }
@@ -210,7 +229,10 @@ function PointForceControllerToy::createAsteroid( %this, %position )
     %player.EmissionRateScale = 3;
     %player.SizeScale = 2;
     %player.SceneLayer = 11;
+<<<<<<< HEAD
     %player.setLifetime( PointForceControllerToy.asteroidLifetime );  
+=======
+>>>>>>> - Updated the PointForceControllerToy to better show its features.
     SandboxScene.add( %player );
     %jointId = SandboxScene.createRevoluteJoint( %object, %player );
     SandboxScene.setRevoluteJointLimit( %jointId, 0, 0 );    
